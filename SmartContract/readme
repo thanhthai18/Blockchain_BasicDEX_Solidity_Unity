@@ -1,0 +1,10 @@
+1.test contract: 
+source .env
+ganache-cli --fork https://mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID --unlock $DAI_WHALE --networkId 999
+- test: npx truffle test --network mainnet_fork test/test-uniswap.js
+2. deploy:npx truffle migrate --network ropsten
+3. function (in TestUniswap - call Interfaces/Uniswap):
+- swap: swap from amountIn tokenIn to tokenOut, amountOutMin: min tokenOut want, to: address to (default: sender)
+- getAmountOutMin: get max amout from amountIn tokenIn to tokenOut
+- swapFromEthToToken: swap from ETh (native coin) to token
+- swapFromTokenToEth: swap from token to ETH
